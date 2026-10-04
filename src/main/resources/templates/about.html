@@ -1,0 +1,279 @@
+<!--<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>About</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>About Library</h1>
+
+</header>
+
+
+
+<section class="about">
+
+
+    <h2>Central Library</h2>
+
+
+    <p>
+
+        Our library management system helps users manage books,
+        authors and availability details easily.
+
+    </p>
+
+
+</section>
+
+
+
+</body>
+
+</html>-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Central Library | About</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+<body>
+
+
+<!-- Navigation -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-icon">📚</span>
+
+        <span>Central Library</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a th:href="@{/}">
+            Home
+        </a>
+
+        <a th:href="@{/books}">
+            Books
+        </a>
+
+        <a th:href="@{/add-book}">
+            Add Book
+        </a>
+
+        <a th:href="@{/about}" class="active">
+            About
+        </a>
+
+        <a th:href="@{/contact}">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- About Header -->
+
+<section class="page-header">
+
+    <p>ABOUT US</p>
+
+    <h1>More Than Just Books</h1>
+
+    <span>
+        A simple digital approach to managing knowledge.
+    </span>
+
+</section>
+
+
+<!-- About Content -->
+
+<section class="about-section">
+
+
+    <div class="about-image">
+
+        <div class="about-book">
+
+            <span>📚</span>
+
+            <h3>
+                Knowledge
+            </h3>
+
+            <p>
+                Connects Us
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p class="section-label">
+            OUR STORY
+        </p>
+
+        <h2>
+            Welcome to Central Library
+        </h2>
+
+
+        <p>
+
+            Central Library is a simple and modern
+            library management system designed to make
+            managing books easier and more organized.
+
+        </p>
+
+
+        <p>
+
+            Our system allows library staff to add,
+            update, search and remove books while
+            keeping important information such as
+            authors, versions and availability
+            easily accessible.
+
+        </p>
+
+
+        <div class="about-points">
+
+            <div>
+
+                <strong>📖</strong>
+
+                <span>
+                    Organized Book Collection
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>🔎</strong>
+
+                <span>
+                    Fast Book Search
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>⚡</strong>
+
+                <span>
+                    Simple Book Management
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Mission -->
+
+<section class="mission-section">
+
+    <p class="section-label">
+        OUR MISSION
+    </p>
+
+    <h2>
+        Making Library Management Simple
+    </h2>
+
+    <p>
+
+        We believe technology should make everyday
+        library tasks easier, faster and more
+        organized.
+
+    </p>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>📚 Central Library</h3>
+
+            <p>
+                Your gateway to knowledge and discovery.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a th:href="@{/}">Home</a>
+
+            <a th:href="@{/books}">Books</a>
+
+            <a th:href="@{/contact}">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Central Library. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Library Management</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body>
+
+
+<section class="hero">
+    <h1>Online Library Management System</h1>
+</section>
+
+
+
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Central Library | Home</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+<body>
+
+<!-- =========================
+     Navigation Bar
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-icon">📚</span>
+
+        <span>Central Library</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a th:href="@{/}" class="active">Home</a>
+
+        <a th:href="@{/books}">Books</a>
+
+        <a th:href="@{/add-book}">Add Book</a>
+
+        <a th:href="@{/about}">About</a>
+
+        <a th:href="@{/contact}">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     Hero Section
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="hero-small">
+            WELCOME TO CENTRAL LIBRARY
+        </p>
+
+        <h1>
+            Discover Knowledge.<br>
+            <span>Explore Possibilities.</span>
+        </h1>
+
+        <p class="hero-description">
+
+            A simple and smart library management system
+            designed to help you explore, manage and organize
+            your books with ease.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a th:href="@{/books}" class="btn primary-btn">
+                Explore Books
+            </a>
+
+            <a th:href="@{/add-book}" class="btn secondary-btn">
+                Add a Book
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-book">
+
+        <div class="book-illustration">
+
+            <div class="book-cover">
+
+                <div class="book-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Knowledge
+                </h3>
+
+                <p>
+                    Starts Here
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Features
+========================= -->
+
+<section class="features">
+
+    <div class="section-heading">
+
+        <p>WHAT WE OFFER</p>
+
+        <h2>
+            Everything You Need to Manage Your Library
+        </h2>
+
+    </div>
+
+
+    <div class="feature-container">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📚
+            </div>
+
+            <h3>
+                Book Collection
+            </h3>
+
+            <p>
+                Browse and manage all books available
+                in the library from one place.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔍
+            </div>
+
+            <h3>
+                Easy Search
+            </h3>
+
+            <p>
+                Quickly find books by their title
+                or author using our search feature.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Simple Management
+            </h3>
+
+            <p>
+                Add, update and remove books
+                quickly and easily.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Call To Action
+========================= -->
+
+<section class="home-cta">
+
+    <h2>
+        Ready to explore?
+    </h2>
+
+    <p>
+        Find your next great book today.
+    </p>
+
+    <a th:href="@{/books}" class="btn primary-btn">
+        View Library
+    </a>
+
+</section>
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>📚 Central Library</h3>
+
+            <p>
+                Your gateway to knowledge and discovery.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a th:href="@{/}">Home</a>
+
+            <a th:href="@{/books}">Books</a>
+
+            <a th:href="@{/about}">About</a>
+
+            <a th:href="@{/contact}">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Central Library. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

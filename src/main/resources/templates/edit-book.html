@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Edit Book</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Edit Book</h1>
+
+    <nav>
+
+        <a th:href="@{/}">Home</a>
+
+        <a th:href="@{/books}">Books</a>
+
+        <a th:href="@{/add-book}">Add Book</a>
+
+    </nav>
+
+</header>
+
+
+<div class="form-container">
+
+    <h2>Edit Book</h2>
+
+    <form
+            th:action="@{/edit-book/{id}(id=${book.id})}"
+            th:object="${book}"
+            method="post">
+
+
+        <input
+                type="number"
+                th:field="*{id}"
+                readonly>
+
+
+        <input
+                type="text"
+                th:field="*{title}"
+                placeholder="Book Title"
+                required>
+
+
+        <input
+                type="text"
+                th:field="*{author}"
+                placeholder="Author"
+                required>
+
+        <select th:field="*{status}">
+
+            <option value="Available">
+                Available
+            </option>
+
+            <option value="Not Available">
+                Not Available
+            </option>
+
+        </select>
+
+
+        <button type="submit">
+            Update Book
+        </button>
+
+    </form>
+
+</div>
+
+
+<footer>
+
+    <p>Central Library</p>
+
+</footer>
+
+</body>
+
+</html>

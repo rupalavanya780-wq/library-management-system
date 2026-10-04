@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Central Library | Add Book</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <span class="logo-icon">📚</span>
+
+            <span>Central Library</span>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a th:href="@{/}">
+                Home
+            </a>
+
+            <a th:href="@{/books}">
+                Books
+            </a>
+
+            <a th:href="@{/add-book}" class="active">
+                Add Book
+            </a>
+
+            <a th:href="@{/about}">
+                About
+            </a>
+
+            <a th:href="@{/contact}">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<div class="form-container">
+
+    <form th:action="@{/add-book}" th:object="${book}" method="post">
+
+        <input
+                type="number"
+                th:field="*{id}"
+                placeholder="Book ID"
+                required>
+
+        <input
+                type="text"
+                th:field="*{title}"
+                placeholder="Book Title"
+                required>
+
+        <input
+                type="text"
+                th:field="*{author}"
+                placeholder="Author"
+                required>
+
+        <select th:field="*{status}">
+
+            <option value="Available">Available</option>
+
+            <option value="Not Available">Not Available</option>
+
+        </select>
+
+        <button type="submit">
+            Add Book
+        </button>
+
+    </form>
+
+</div>
+
+<footer>
+
+    <p>Central Library</p>
+
+</footer>
+
+</body>
+
+</html>

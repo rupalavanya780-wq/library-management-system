@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Central Library | Books</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     Navigation
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-icon">📚</span>
+
+        <span>Central Library</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a th:href="@{/}">
+            Home
+        </a>
+
+        <a th:href="@{/books}" class="active">
+            Books
+        </a>
+
+        <a th:href="@{/add-book}">
+            Add Book
+        </a>
+
+        <a th:href="@{/about}">
+            About
+        </a>
+
+        <a th:href="@{/contact}">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     Books Header
+========================= -->
+
+<section class="page-header">
+
+    <p>OUR COLLECTION</p>
+
+    <h1>Library Books</h1>
+
+    <span>
+        Explore our collection and find your next book.
+    </span>
+
+</section>
+
+
+<!-- =========================
+     Books Content
+========================= -->
+
+<div class="container">
+
+
+    <div class="books-top">
+
+        <div>
+
+            <h2>
+                All Books
+            </h2>
+
+            <p>
+                Manage your library collection
+            </p>
+
+        </div>
+
+
+        <a th:href="@{/add-book}" class="btn primary-btn">
+
+            + Add New Book
+
+        </a>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+                type="text"
+                id="searchBook"
+                placeholder="Search by title or author..."
+                onkeyup="searchBook()">
+
+    </div>
+
+
+    <!-- Books Table -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Title</th>
+
+                <th>Author</th>
+
+                <th>Status</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+            </thead>
+
+
+            <tbody id="bookTable">
+
+            <tr th:each="book : ${books}">
+
+                <td th:text="${book.id}"></td>
+
+                <td class="book-title">
+
+                    <a
+                            th:href="@{'/pdfs/' + ${book.notesFile}}"
+                            target="_blank"
+                            th:text="${book.title}">
+                    </a>
+
+                </td>
+
+                <td th:text="${book.author}"></td>
+
+                <td>
+
+                    <span
+                            th:class="${book.status == 'Available'} ? 'status available' : 'status unavailable'"
+                            th:text="${book.status}">
+                    </span>
+
+                </td>
+
+
+                <td class="actions">
+
+                    <a
+                            th:href="@{'/pdfs/' + ${book.notesFile}}"
+                            target="_blank"
+                            class="notes-btn">
+
+                        📖 Read Notes
+
+                    </a>
+
+
+                    <a
+                            th:href="@{'/pdfs/' + ${book.notesFile}}"
+                            class="download-btn"
+                            download>
+
+                        ⬇ Download
+
+                    </a>
+
+
+                    <a
+                            th:href="@{/edit-book/{id}(id=${book.id})}"
+                            class="edit-btn">
+
+                        Edit
+
+                    </a>
+
+
+
+                    <a
+                            th:href="@{/delete-book/{id}(id=${book.id})}"
+                            class="delete-btn"
+                            onclick="return confirm('Are you sure you want to delete this book?');">
+
+                        Delete
+
+                    </a>
+
+                </td>
+
+
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>📚 Central Library</h3>
+
+            <p>
+                Your gateway to knowledge and discovery.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a th:href="@{/}">Home</a>
+
+            <a th:href="@{/about}">About</a>
+
+            <a th:href="@{/contact}">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Central Library. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function searchBook() {
+
+        let input =
+            document.getElementById("searchBook")
+                .value
+                .toLowerCase();
+
+        let rows =
+            document
+                .getElementById("bookTable")
+                .getElementsByTagName("tr");
+
+
+        for (let i = 0; i < rows.length; i++) {
+
+            let title =
+                rows[i]
+                    .getElementsByTagName("td")[1];
+
+            let author =
+                rows[i]
+                    .getElementsByTagName("td")[2];
+
+
+            if (title && author) {
+
+                let titleText =
+                    title.textContent.toLowerCase();
+
+                let authorText =
+                    author.textContent.toLowerCase();
+
+
+                if (
+                    titleText.includes(input) ||
+                    authorText.includes(input)
+                ) {
+
+                    rows[i].style.display = "";
+
+                } else {
+
+                    rows[i].style.display = "none";
+
+                }
+
+            }
+
+        }
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
